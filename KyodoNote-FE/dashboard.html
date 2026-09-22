@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - KyodoNote</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .dashboard {
+        text-align: center;
+        padding: 20px;
+      }
+      .dashboard p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .logout {
+        width: auto;
+        padding: 0 28px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card dashboard">
+        <div class="brand">KyodoNote</div>
+        <h1>You're logged in!</h1>
+        <p id="welcome"></p>
+        <button id="logout" class="btn btn-primary logout">Logout</button>
+      </section>
+    </main>
+
+    <script>
+      const auth = JSON.parse(localStorage.getItem("grand_design_auth"));
+      if (!auth) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("welcome").textContent =
+          `Welcome, ${auth.name} (${auth.email})`;
+      }
+
+      document.getElementById("logout").addEventListener("click", () => {
+        localStorage.removeItem("grand_design_auth");
+        window.location.href = "login.html";
+      });
+    </script>
+  </body>
+</html>

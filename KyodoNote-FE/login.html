@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - KyodoNote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Guesa+Libre&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card">
+        <div class="brand">KyodoNote</div>
+
+        <div class="auth-heading">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h1>Login to your account</h1>
+          <p class="subtitle">Enter your details to continue.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+            />
+            <small class="error" id="loginEmailError"></small>
+          </div>
+
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <div class="password-wrap">
+              <input
+                id="loginPassword"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Your password"
+              />
+              <button
+                class="toggle-password"
+                type="button"
+                data-target="loginPassword"
+                aria-label="Show password"
+              >
+                Show
+              </button>
+            </div>
+            <small class="error" id="loginPasswordError"></small>
+          </div>
+
+          <div
+            id="loginMessage"
+            class="form-message"
+            role="alert"
+            aria-live="polite"
+          ></div>
+
+          <button id="loginButton" class="btn btn-primary" type="submit">
+            <span class="btn-text">Login</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p class="switch-auth">
+          Don't have an account?
+          <a href="index.html">Register</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
